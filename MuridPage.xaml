@@ -1,0 +1,72 @@
+﻿<Window x:Class="uas_pogdas_rev.MuridPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:uas_pogdas_rev"
+        WindowState="Maximized"
+        mc:Ignorable="d"
+        Title="MuridPage" Height="450" Width="800">
+
+    <Grid Margin="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+
+            <RowDefinition Height="3*"/>
+
+        </Grid.RowDefinitions>
+
+
+        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
+            <DataGrid Name="DataGridMurid"
+                      AutoGenerateColumns="True" HorizontalAlignment="Stretch" 
+                      VerticalAlignment="Top" Margin="5" 
+                      SelectionChanged="DataGridMurid_SelectionChanged"/>
+        </ScrollViewer>
+
+
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+
+                <ColumnDefinition Width="2*"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+
+            <Label Content="Nama:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"/>
+            <TextBox x:Name="name_txt" Grid.Row="0" Grid.Column="1" Width="200" Margin="5"/>
+
+            <Label Content="Tanggal Lahir:" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"/>
+            <DatePicker x:Name="TTL_txt" Grid.Row="1" Grid.Column="1" Width="200" Margin="5"/>
+
+
+            <Label Content="Alamat:" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"/>
+            <TextBox x:Name="alamat_txt" Grid.Row="2" Grid.Column="1" Width="200" Margin="5"/>
+
+
+            <Label Content="Email:" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"/>
+            <TextBox x:Name="email_txt" Grid.Row="3" Grid.Column="1" Width="200" Margin="5"/>
+
+            <Label Content="Kelas:" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"/>
+            <TextBox x:Name="kelas_txt" Grid.Row="4" Grid.Column="1" Width="200" Margin="5"/>
+
+            <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <Button Content="Edit" Width="100" Click="EditMurid" Margin="5"/>
+                <Button Content="Clear" Width="100" Click="DeleteMurid" Margin="5"/>
+                <Button Content="Beranda" Width="100" Click="GoToMainPage" Margin="5"/>
+                <Button Content="Delete" Width="100" Click="ClearMurid" Margin="5"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+
+</Window>
